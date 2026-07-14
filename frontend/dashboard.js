@@ -15,7 +15,7 @@ async function loadProfile() {
 
         const response =
             await fetch(
-                'http://localhost:3000/auth/profile',
+                `${API_URL}/auth/profile`,
                 {
                     headers: {
                         Authorization:

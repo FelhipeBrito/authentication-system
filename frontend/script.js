@@ -26,8 +26,8 @@ loginForm.addEventListener(
         try {
 
             const response =
-                await fetch(
-                    'http://localhost:3000/auth/login',
+                await fetch(                   
+                    `${API_URL}/auth/login`,
                     {
                         method: 'POST',
 

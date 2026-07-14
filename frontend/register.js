@@ -9,33 +9,29 @@ form.addEventListener("submit", async (event) => {
 
   const password = document.getElementById("password").value;
 
-  const response = await fetch("http://localhost:3000/auth/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
+  const response = await fetch(
+    `${API_URL}/auth/register`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
     },
-    body: JSON.stringify({
-      username,
-      password,
-    }),
-  });
+  );
 
   const data = await response.json();
 
   if (response.ok) {
-
-    message.textContent =
-        'Conta criada com sucesso.';
+    message.textContent = "Conta criada com sucesso.";
 
     setTimeout(() => {
-
-        window.location.replace(
-            'index.html'
-        );
-
+      window.location.replace("index.html");
     }, 1500);
-
-}
+  }
 
   console.log(data);
 });
