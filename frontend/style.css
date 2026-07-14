@@ -91,3 +91,12 @@ footer {
     background-color: #1e83bdaf;
     color: #fff;
 }
+
+@media (max-width: 768px) {
+  form {
+    min-width: 70vh;
+  }
+  form input {
+    width: 40vh;
+  }
+}
